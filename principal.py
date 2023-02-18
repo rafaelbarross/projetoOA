@@ -1,10 +1,22 @@
+from PySimpleGUI import PySimpleGUI as sg
 from time import sleep
 
-print("""\n  === Olá estudante, isso é um Objeto de Aprendizagem (OA) ===
+sg.theme('DarkBlue')
+
+layout = [
+    [sg.Text("""\n  === Olá estudante, isso é um Objeto de Aprendizagem (OA) ===
 - O assunto que iremos ver é: The Present Continuous Tense/Inglês -\n
 Não se preocupe, iremos tirar todas as suas duvidas (-_-)7
 
-Bons estudos! :) \n""")
+Bons estudos! :) \n""")]
+]
+
+janela = sg.Window("Tela de boas vindas", layout)
+
+event, values = janela.read()
+
+janela.close()
+
 nome = str(input("Digite seu nome: "))
 print(f"\nOlá, \033[1;36m{nome}\033[m, seja bem-vindo/a!")
 cont = 0
